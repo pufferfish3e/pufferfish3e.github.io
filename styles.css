@@ -144,3 +144,7 @@ a:hover {
 .textcolor {
    color: navy;
 }
+
+#letter iframe p {
+   color: blue;
+}
