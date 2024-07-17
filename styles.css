@@ -145,6 +145,7 @@ a:hover {
    color: navy;
 }
 
-#letter iframe p {
+#letter a:hover {
+   transition: opacity 0.3s, ease 1s;
    color: blue;
 }
