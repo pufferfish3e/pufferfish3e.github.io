@@ -57,9 +57,12 @@ body {
 	text-align: left;
 	padding-left: 20vh;
 	padding-top: 40vh;
+	font-family: Raleway, sans-serif;
 }
 
 .main h1 {
+  margin: 0;
+  padding: 0;
   position: relative;
   font-size: 80px;
   font-family: Raleway, sans-serif;
@@ -69,14 +72,19 @@ body {
 
 .main h5 {
   font-size: 20px;
-  font-family: Raleway,;
+}
+
+.main h4 {
+  font-size: 20px;
+  color: white;
 }
 
 .main img {
-  transform: translateY(-20vh);
-  max-width: 400px;
-  max-height: 400px;
-  align-items: center;
+  transform: translateY(-50vh) translateX(50vh);
+  width: 600px;
+  height: 600px;
+  max-width: 600px;
+  max-height: 600px;
   z-index: 0;
 }
 
@@ -131,12 +139,12 @@ body {
     margin-top: 2rem;
     margin-right: 1rem;
     font-size: 1.3rem;
-	filter: none;
+	  filter: none;
 }
 
 .navbar a {
     text-decoration: none;
-	padding: 10px;
+	  padding: 10px;
     font-weight: 500;
     transition: color 0.5s, font-size 0.5s ease-in-out;
     color: white;
@@ -261,7 +269,8 @@ body {
 }
 
 section {
-  min-height: 300px;
+  opacity: 0;
+  min-height: 100vh;
   padding: 30px;
 }
 
