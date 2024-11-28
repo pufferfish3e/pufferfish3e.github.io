@@ -9,16 +9,43 @@
 
 .html{
     font-size: 62.5%;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(0, 105, 148, 1) 100%), 
-                url("assets/background.jpg") no-repeat center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
 }
+
+.background {
+  position: relative; 
+  height: 100vh;
+  overflow: hidden; 
+}
+
+.background::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.05);
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(0, 105, 148, 1) 100%
+    ),
+    url("assets/background.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+  box-shadow: none;
+}
+
+
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines{
@@ -27,14 +54,30 @@ body {
 
 .main {
 	display: absolute;
-	padding-top: 250px;
-	padding-left: 120px;
+	text-align: left;
+	padding-left: 20vh;
+	padding-top: 40vh;
 }
 
 .main h1 {
-	font-size: 80px;
-	transform: translateY(-150%);
-	font-family: cursive;
+  position: relative;
+  font-size: 80px;
+  font-family: Raleway, sans-serif;
+  color: white;
+  z-index: 2;
+}
+
+.main h5 {
+  font-size: 20px;
+  font-family: Raleway,;
+}
+
+.main img {
+  transform: translateY(-20vh);
+  max-width: 400px;
+  max-height: 400px;
+  align-items: center;
+  z-index: 0;
 }
 
 @keyframes fadeIn {
@@ -58,13 +101,6 @@ body {
 	animation: fadeIn ease-in-out 1s forwards;
 }
 
-.main h3 {
-	font-size: 42px;
-	transform: translateX(-10%) translateY(-60%);
-	font-family: Raleway,sans-serif;
-	color: white;
-}
-
 
 .container{
     max-width: 1200px;
@@ -73,7 +109,7 @@ body {
 }
 
 .navbar{
-	opacity: 0.85;
+	  opacity: 0.85;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -113,11 +149,7 @@ body {
 
 
 @media (max-width: 768px){
-	.main h3 {
-		text-shadow: 3px 3px black;
-		white-space: nowrap;
-	}
-	
+
     .navbar{
         opacity: 0.95;
     }
@@ -224,12 +256,13 @@ body {
 }
 
 .box {
-  margin-top:359px;
   background-color: rgba(0, 105, 148, 1);
+  height: auto;
 }
 
 section {
   min-height: 300px;
+  padding: 30px;
 }
 
 section h1 {
