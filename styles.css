@@ -22,13 +22,6 @@ a {
   box-sizing: border-box;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-  text-align: center;
-  transform: translateY(-20vh);
-}
 
 h1 {
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -47,7 +40,7 @@ h1 {
 .download-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding: 20px;
 }
 
 .btn i {
@@ -71,11 +64,13 @@ h1 {
   background-color: #f3f3f4;
 }
 
+
 .nav-container {
     position: fixed;
     right: clamp(10px, 2vw, 20px); 
     top: 50%;
     transform: translateY(-50%);
+    opacity: 60%;
     background-color: #ffffff; 
     border-radius: 20px; 
     padding: 15px 10px; 
@@ -95,7 +90,7 @@ h1 {
 }
 
 .nav-link {
-    color: #1d1d1f; 
+    color: black; 
     text-decoration: none;
     font-size: 24px; 
     display: flex;
@@ -254,9 +249,8 @@ h1 {
   }
 }
 
-
-
 .contact-icon {
+  opacity: 60%;
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -339,24 +333,53 @@ h1 {
   opacity: 1;
 }
 
-#home {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+footer {
+  background-color: #f3f3f4;
+  color: #1d1d1f;
+  margin: 0;
+  padding: 20px;
   text-align: center;
 }
 
 #home h1 {
-  font-size: 48px;
+  margin: none;
+  padding-left: 2vw;
+  font-size: 8vh;
+  transform: translateY(5vh);
+}
+
+#home h3 {
+  color: #808080;
+  padding-left: 3vw;
+  font-size: 3vh;
+  transform: translateY(12vh);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 #home p {
-  font-size: 18px;
-  color: #666666;
+  font-size: 25px;
+  color: black;
+  padding-left: 25vw;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  transform: translateY(-1vh);
 }
 
+#home h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #1d1d1f;
+  opacity: 70%;
+  padding-left: 3vw;
+  max-width: 50vw;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#home img {
+  transform: translateX(55vw) translateY(-40vh);
+  height: 50vh;
+  width: auto;
+}
 
 #text-effect {
   opacity: 1;
@@ -370,6 +393,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  
+  .line {
+    visibility: hidden;
+  }
+  
   
   .contact-icon {
     bottom: 10px;

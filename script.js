@@ -51,3 +51,37 @@ skillBtns.forEach(btn => {
   });
 });
 
+window.onload = function() {
+  var words = ["student.", "programmer.", "developer."];
+  var textElement = document.getElementById("text-container").querySelector("p");
+
+  function typeText(staticText, word, element, callback) {
+    var speed = 100; 
+    element.innerHTML = staticText;
+    var i = 0;
+    var timer = setInterval(function() {
+      if (i < word.length) {
+        element.innerHTML += word.charAt(i);
+        i++;
+      } else {
+        clearInterval(timer);
+        if (typeof callback === 'function') {
+          callback();
+        }
+      }
+    }, speed);
+  }
+
+  function cycleWords(words, textElement, index) {
+    index = index || 0;
+    var word = words[index];
+    typeText("and I am a ", word, textElement, function() {
+      setTimeout(function() {
+        textElement.innerHTML = "";
+        cycleWords(words, textElement, (index + 1) % words.length);
+      }, 2000); 
+    });
+  }
+
+  cycleWords(words, textElement, 0);
+};
