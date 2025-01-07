@@ -19,10 +19,6 @@ window.addEventListener('scroll', () => {
       section.classList.remove('active');
     }
   });
-});
-
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
@@ -54,3 +50,4 @@ skillBtns.forEach(btn => {
     }, 500);
   });
 });
+
