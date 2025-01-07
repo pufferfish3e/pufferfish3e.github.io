@@ -5,6 +5,7 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     background-color: #f3f3f4; 
     color: #1d1d1f; 
+    overflow-x: hidden;
 }
 
 a {
@@ -13,10 +14,12 @@ a {
 
 .section {
   position: relative;
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 3vw, 60px);
   min-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .content {
@@ -48,7 +51,7 @@ h1 {
 }
 
 .btn i {
-  margin-right: 8px; /* Space between icon and text */
+  margin-right: 8px; 
 }
 
 .btn {
@@ -70,15 +73,15 @@ h1 {
 
 .nav-container {
     position: fixed;
-    right: 20px; 
+    right: clamp(10px, 2vw, 20px); 
     top: 50%;
     transform: translateY(-50%);
-    background-color: #f5f5f7; 
+    background-color: #ffffff; 
     border-radius: 20px; 
     padding: 15px 10px; 
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
-    z-index: 2;
+    z-index: 1000;
 }
 
 
@@ -137,10 +140,15 @@ h1 {
     align-items: center;
 }
 
+.about-content p {
+    max-width: 50vw;
+    
+}
+
 .about-content img {
-    width: 200px;
+    width: 50vw;
     border-radius: 50%;
-    margin-right: 2em;
+    margin-right: 5vw;
 }
 
 
@@ -155,7 +163,7 @@ h1 {
 }
 
 .project {
-    min-height: 50vh;
+    min-height: 30vh;
     min-width: 25vw;
     background-color: #fff;
     padding: 1em;
@@ -245,6 +253,8 @@ h1 {
     transform: translateY(20px);
   }
 }
+
+
 
 .contact-icon {
   position: fixed;
@@ -360,6 +370,7 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  
   .contact-icon {
     bottom: 10px;
     left: 10px;
@@ -372,9 +383,3 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
-  .btn {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}

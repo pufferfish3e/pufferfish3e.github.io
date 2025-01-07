@@ -3,88 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=San Francisco&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-      <nav>
-        <div class="nav-container">
-          <ul class="nav-links">
-            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span class="sr-only">Home</span></a></li>
-            <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span class="sr-only">About Me</span></a></li>
-            <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i><span class="sr-only">Projects</span></a></li>
-            <li><a href="#skills" class="nav-link"><i class="fas fa-gear"></i><span class="sr-only">Skills</span></a></li>
-          </ul>
-        </div>
-      </nav>
+<nav>
+  <div class="nav-overlay">
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span class="sr-only">Home</span></a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span class="sr-only">About Me</span></a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i><span class="sr-only">Projects</span></a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-gear"></i><span class="sr-only">Skills</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-   <section id="home" class="section">
+<section id="home" class="section">
   <div class="content">
     <h1>Welcome to My Portfolio</h1>
     <div id="text-container">
       <p>Scroll down to discover my work.</p>
     </div>
     <div class="download-buttons">
-      <a href="files/cv.pdf" class="btn" download role="button" aria-label="Download CV"><i class="fas fa-download"></i> Download CV</a>
+      <a href="/assets/gradcert.pdf" class="btn" download role="button" aria-label="Download CV"><i class="fas fa-download"></i> Download CV</a>
     </div>
   </div>
-    </section>
+</section>
 
-    <section id="about" class="section">
-        <h1>About Me</h1>
-        <div class="about-content">
-            <img src="profile.jpg" alt="Profile Picture">
-            <p>I am a passionate developer with a keen eye for detail and a love for clean, efficient code.</p>
-        </div>
-    </section>
+<section id="about" class="section">
+  <h1>About Me</h1>
+  <div class="about-content">
+    <img src="profile.jpg" alt="Profile Picture">
+    <p>I am a recent secondary school graduate passionate about mathematics, programming, and the transformative potential of artificial intelligence. With a strong foundation in problem-solving and a creative mindset honed through music and sports, I aim to contribute innovative solutions to the AI field while continuously learning and growing.</p>
+  </div>
+</section>
 
-    <section id="projects" class="section">
-        <h1>My Projects</h1>
-        <div class="project-grid">
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project One</h3>
-                <p>Brief description of project one.</p>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Project Two</h3>
-                <p>Brief description of project two.</p>
-            </div>
-            <div class="project">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>Project Three</h3>
-                <p>Brief description of project three.</p>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
+<section id="projects" class="section">
+  <h1>My Projects</h1>
+  <div class="project-grid">
+    <div class="project">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project One</h3>
+      <p>Brief description of project one.</p>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project Two</h3>
+      <p>Brief description of project two.</p>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Project 3">
+      <h3>Project Three</h3>
+      <p>Brief description of project three.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="skills" class="section">
-      <h1>My Skills</h1>
-        <div class="skills-list">
+<section id="skills" class="section">
+  <h1>My Skills</h1>
+  <div class="skills-list">
     <button class="skill-btn" data-content="HTML is the standard language for creating web pages." role="button" aria-controls="skill-description">
-      <i class="fas fa-code"></i>HTML</button>
+      <i class="fas fa-code"></i> HTML</button>
     <button class="skill-btn" data-content="CSS is used to describe the presentation of a document written in HTML." role="button" aria-controls="skill-description">
-      <i class="fas fa-paint-brush"></i>CSS</button>
+      <i class="fas fa-paint-brush"></i> CSS</button>
     <button class="skill-btn" data-content="Python is a high-level, interpreted programming language." role="button" aria-controls="skill-description">
-      <i class="fas fa-chart-line"></i>Python</button>
+      <i class="fas fa-chart-line"></i> Python</button>
     <button class="skill-btn" data-content="C++ is a general-purpose programming language." role="button" aria-controls="skill-description">
-      <i class="fas fa-cogs"></i>C++</button>
+      <i class="fas fa-cogs"></i> C++</button>
   </div>
   <div class="skill-description" id="skill-description" aria-live="polite"></div>
 </section>
-    
-    <div class="contact-icon" id="contact-icon" aria-label="Contact links toggle">
-      <i class="fas fa-envelope"></i>
-        <div class="social-links" id="social-links" role="menu">
-          <a href="https://github.com/pufferfish3e" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-github"></i></a>
-          <a href="https://wa.me/+6587681400" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://instagram.com/mambuwu" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+<div class="contact-icon" id="contact-icon" aria-label="Contact links toggle">
+  <i class="fas fa-envelope"></i>
+  <div class="social-links" id="social-links" role="menu">
+    <a href="https://github.com/pufferfish3e" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-github"></i></a>
+    <a href="https://wa.me/+6587681400" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/mambuwu" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
