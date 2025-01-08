@@ -27,9 +27,9 @@
   <div class="content">
     <h3>Hello! I'm</h3>
     <h1>Kendrick Slamat</h1>
-    <div id="text-container">
-      <p>yes</p>
-    </div>
+    <div id="text-container" class="typing">
+  <p>I am a <span id="typing-text"></span><span id="typing-cursor"></span></p>
+  </div>
     <h4>Hey, I'm Kendrick, a student diving into the world of programming. I've been busy creating fun and innovative projects. Oh, and did I mention I'm a huge fan of pufferfish? Let's connect and see what we can create together!</h4>
     <img src="assets/pufferfish.png" alt="pufferfish"></img>
     <div class="icon-container">
@@ -43,11 +43,9 @@
   <div class="about-content">
     <p>I am a recent secondary school graduate passionate about mathematics, programming, and the transformative potential of artificial intelligence. With a strong foundation in problem-solving and a creative mindset honed through music and sports, I aim to contribute innovative solutions to the AI field while continuously learning and growing.</p>
     <img src="assets/pufferfish.png" alt="Profile Picture">
-    <div class="icon-container">
   <i class="fa-solid fa-angles-down"></i>
 </div>
   </div>
-  <h1>My Skills</h1>
 <div class="skills-list">
   <button class="skill-btn" data-content="HTML is the standard language for creating web pages." role="button" aria-controls="skill-description">
     <i class="fa-brands fa-html5"></i> HTML</button>
@@ -59,6 +57,9 @@
     <i class="fas fa-cogs"></i> C++</button>
 </div>
 <div class="skill-description" id="skill-description" aria-live="polite"></div>
+<div class="icon-container">
+  <i class="fa-solid fa-angles-down"></i>
+</div>
 </section>
 
 <section id="projects" class="section">
@@ -84,7 +85,7 @@
 </div>
   </div>
 </section>
-
+<!--
 <section id="skills" class="section">
   <h1>My Skills</h1>
   <div class="skills-list">
@@ -99,17 +100,14 @@
   </div>
   <div class="skill-description" id="skill-description" aria-live="polite"></div>
 </section>
+-->
 
-<div class="contact-icon" id="contact-icon" aria-label="Contact links toggle">
-  <i class="fa-solid fa-phone"></i>
-  <div class="social-links" id="social-links" role="menu">
-    <a href="https://github.com/pufferfish3e" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-github"></i></a>
-    <a href="https://wa.me/+6587681400" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://instagram.com/mambuwu" class="social-link" role="menuitem" tabindex="-1"><i class="fab fa-instagram"></i></a>
-  </div>
-</div>
 <footer id="footer">
   <div class="download-buttons">
+  <a href="https://github.com/pufferfish3e" class="btn" role="button"><i class="fab fa-github"></i>pufferfish3e</a>
+  <a href="https://instagram.com/mambuwu" class="btn" role="button"><i class="fab fa-instagram"></i>mambuwu</a>  
+  <a class="btn"><i class="fa-solid fa-phone"></i>+65 8768 1400</a>  
+  <a class="btn"><i class="fa-regular fa-envelope"></i>kenslamat08@icloud.com</a>
   <a href="/assets/gradcert.pdf" class="btn" download role="button" aria-label="Download CV"><i class="fas fa-download"></i>CV</a>
 </div>
   © 2025 Kendrick Slamat. All rights reserved.

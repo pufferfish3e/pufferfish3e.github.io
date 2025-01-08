@@ -24,8 +24,6 @@ a {
   padding: 5vw 3vw;
 }
 
-
-
 h1 {
   padding-left: 3vw;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -39,6 +37,25 @@ h1 {
   margin-bottom: 30px;
   opacity: 0.8;
   color: #666;
+}
+
+#typing-cursor::after {
+  content: '|';
+  color: #1d1d1f;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+#typing-cursor {
+  display: none;
+}
+
+.typing #typing-cursor {
+  display: inline;
 }
 
 .download-buttons {
@@ -170,22 +187,18 @@ h1 {
     box-shadow: 0 3px 7px rgba(0,0,0,0.1);
 }
 
-.skills-list {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-}
 
 .skill-btn {
+  max-width: 10vw;
   color: #1d1d1f;
   background-color: #ffffff;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 15px 5vw;
-  margin: 5px;
+  margin: 1vw;
+  height: 5vh;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
 }
@@ -205,6 +218,8 @@ h1 {
   opacity: 0;
   transition: opacity 0.5s ease;
   margin-top: 20px;
+  text-wrap: nowrap;
+  transform: translateY(-17vh);
 }
 
 .skill-description.active {
@@ -222,28 +237,6 @@ h1 {
     transform: translateY(0);
 }
 
-@keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatDown {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-}
-
 .icon-container {
   position: absolute;
   left: 50%; 
@@ -252,90 +245,6 @@ h1 {
   color: #1d1d1f;
 }
 
-
-.contact-icon {
-  opacity: 60%;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f5f5f7;
-  color: #1d1d1f;
-  border: 1px solid rgba(255, 255, 255, 0.1); 
-  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  overflow: visible;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
-.contact-icon.active {
-  transform: scale(1.4);
-}
-
-.social-link {
-  color: #1d1d1f;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.contact-icon.active .social-link {
-  animation: floatUp 0.3s ease forwards;
-}
-
-.contact-icon.active .social-link:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.contact-icon.active .social-link:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.contact-icon.active .social-link:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.contact-icon:not(.active) .social-link {
-  animation: floatDown 0.3s ease forwards;
-  pointer-events: none;
-}
-
-.contact-icon:not(.active) .social-link:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.contact-icon:not(.active) .social-link:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.contact-icon:not(.active) .social-link:nth-child(3) {
-  animation-delay: 0.1s;
-}
-
-.contact-icon i {
-  font-size: 24px;
-}
-
-.social-links {
-  position: absolute;
-  bottom: 60px;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  gap: 10px;
-}
-
-.contact-icon.active .social-links {
-  opacity: 1;
-}
 
 footer {
   background-color: #f3f3f4;
@@ -363,9 +272,9 @@ footer {
 #home p {
   font-size: 25px;
   color: black;
-  padding-left: 25vw;
+  padding-left: 27vw;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  transform: translateY(-1vh);
+  transform: translateY(-2vh);
 }
 
 #home h4 {
@@ -399,12 +308,22 @@ footer {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
+.skills-list {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  padding-left: 3vw;
+  transform: translateY(-18vh);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 #home .icon-container {
   bottom: 35vh;
 }
 
 #about .icon-container {
-  bottom: 15vh;
+  bottom: 18vh;
 }
 
 #projects .icon-container {
@@ -416,8 +335,7 @@ footer {
   transition: opacity 1s ease;
 }
 
-#static-text,
-#typing-text {
+#static-text {
   font-size: 20px;
   color: #1d1d1f;
 }
