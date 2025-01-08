@@ -67,8 +67,7 @@ h1 {
 .download-buttons {
   display: flex;
   justify-content: center;
-  padding: 20px;
-  padding-top: 5rem;
+  padding: 3% 0 6% 0;
 }
 
 .btn i {
@@ -254,10 +253,11 @@ h1 {
 
 
 footer {
-  background-color: #f3f3f4;
+  background-color: #e2e2e1;
   color: #1d1d1f;
   margin: 0;
   padding: 20px;
+  padding-bottom: 5%;
   text-align: center;
 }
 
@@ -346,6 +346,20 @@ footer {
   font-size: 20px;
   color: #1d1d1f;
 }
+
+.cv-div{
+  display: flex;
+  padding: 5% 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-div a{
+  min-width: 100%;
+  text-align: center;
+  transform: translateX(-7px)
+}
+
 
 @media (max-width: 768px) {
   body,html {
