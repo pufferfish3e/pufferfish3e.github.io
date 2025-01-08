@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=San Francisco&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 <nav>
@@ -32,15 +32,33 @@
     </div>
     <h4>Hey, I'm Kendrick, a student diving into the world of programming. I've been busy creating fun and innovative projects. Oh, and did I mention I'm a huge fan of pufferfish? Let's connect and see what we can create together!</h4>
     <img src="assets/pufferfish.png" alt="pufferfish"></img>
+    <div class="icon-container">
+  <i class="fa-solid fa-angles-down"></i>
+    </div>
   </div>
 </section>
 
 <section id="about" class="section">
   <h1>About Me</h1>
   <div class="about-content">
-    <img src="profile.jpg" alt="Profile Picture">
     <p>I am a recent secondary school graduate passionate about mathematics, programming, and the transformative potential of artificial intelligence. With a strong foundation in problem-solving and a creative mindset honed through music and sports, I aim to contribute innovative solutions to the AI field while continuously learning and growing.</p>
+    <img src="assets/pufferfish.png" alt="Profile Picture">
+    <div class="icon-container">
+  <i class="fa-solid fa-angles-down"></i>
+</div>
   </div>
+  <h1>My Skills</h1>
+<div class="skills-list">
+  <button class="skill-btn" data-content="HTML is the standard language for creating web pages." role="button" aria-controls="skill-description">
+    <i class="fa-brands fa-html5"></i> HTML</button>
+  <button class="skill-btn" data-content="CSS is used to describe the presentation of a document written in HTML." role="button" aria-controls="skill-description">
+    <i class="fa-brands fa-css"></i> CSS</button>
+  <button class="skill-btn" data-content="Python is a high-level, interpreted programming language." role="button" aria-controls="skill-description">
+    <i class="fa-brands fa-python"></i> Python</button>
+  <button class="skill-btn" data-content="C++ is a general-purpose programming language." role="button" aria-controls="skill-description">
+    <i class="fas fa-cogs"></i> C++</button>
+</div>
+<div class="skill-description" id="skill-description" aria-live="polite"></div>
 </section>
 
 <section id="projects" class="section">
@@ -61,6 +79,9 @@
       <h3>Project Three</h3>
       <p>Brief description of project three.</p>
     </div>
+    <div class="icon-container">
+  <i class="fa-solid fa-angles-down"></i>
+</div>
   </div>
 </section>
 
@@ -68,11 +89,11 @@
   <h1>My Skills</h1>
   <div class="skills-list">
     <button class="skill-btn" data-content="HTML is the standard language for creating web pages." role="button" aria-controls="skill-description">
-      <i class="fas fa-code"></i> HTML</button>
+      <i class="fa-brands fa-html5"></i> HTML</button>
     <button class="skill-btn" data-content="CSS is used to describe the presentation of a document written in HTML." role="button" aria-controls="skill-description">
-      <i class="fas fa-paint-brush"></i> CSS</button>
+      <i class="fa-brands fa-css"></i> CSS</button>
     <button class="skill-btn" data-content="Python is a high-level, interpreted programming language." role="button" aria-controls="skill-description">
-      <i class="fas fa-chart-line"></i> Python</button>
+      <i class="fa-brands fa-python"></i> Python</button>
     <button class="skill-btn" data-content="C++ is a general-purpose programming language." role="button" aria-controls="skill-description">
       <i class="fas fa-cogs"></i> C++</button>
   </div>
