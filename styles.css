@@ -24,6 +24,12 @@ a {
   padding: 5vw 3vw;
 }
 
+.somethingelse {
+  min-height: 0vh !important;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 h1 {
   padding-left: 3vw;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -62,6 +68,7 @@ h1 {
   display: flex;
   justify-content: center;
   padding: 20px;
+  padding-top: 5rem;
 }
 
 .btn i {
@@ -369,6 +376,8 @@ footer {
     flex-direction: column;
     max-width: 30vw;
   }
+  
+  
   
   .project-grid {
     display: flex;
