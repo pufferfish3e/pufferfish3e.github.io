@@ -24,7 +24,7 @@ a {
   padding: 5vw 3vw;
 }
 
-.somethingelse {
+.select {
   min-height: 0vh !important;
   padding-bottom: 0;
   padding-top: 0;
@@ -67,7 +67,8 @@ h1 {
 .download-buttons {
   display: flex;
   justify-content: center;
-  padding: 3% 0 6% 0;
+  padding-bottom: 3vh;
+  padding-top: 1vh;
 }
 
 .btn i {
@@ -166,18 +167,18 @@ h1 {
 
 
 .project-grid {
-    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    align-content: center;
     flex-direction: row;
-    gap: 3vw;
-    
+    gap: 30px;
 }
 
 .project {
-    min-height: 30vh;
-    min-width: 25vw;
+    min-height: 40vh;
+    height: 80vh;
+    min-width: 35vw;
+    max-width: 35vw;
     background-color: #fff;
     padding: 1em;
     border-radius: 8px;
@@ -185,9 +186,16 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.project h3 {
+   font-size: 25px;
+}
+
 .project img {
-    min-width: 25vw;
-    min-height: 25vw;
+    left: 50%;
+    min-width: 35vw;
+    min-height: 35vw;
+    max-width: 35vw;
+    max-height: 35vw;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1); 
     box-shadow: 0 3px 7px rgba(0,0,0,0.1);
@@ -215,7 +223,8 @@ h1 {
 
 .skill-btn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  background-color: lightgray;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: border 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
@@ -257,7 +266,6 @@ footer {
   color: #1d1d1f;
   margin: 0;
   padding: 20px;
-  padding-bottom: 5%;
   text-align: center;
 }
 
