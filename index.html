@@ -1,106 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=San Francisco&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://pufferfish3e.github.io/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <title>Personal Website</title>
 </head>
 <body>
-<nav>
-  <div class="nav-overlay">
-    <div class="nav-container">
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span class="sr-only">Home</span></a></li>
-        <li><a href="#about" class="nav-link"><i class="fa-regular fa-circle-user"></i><span class="sr-only">About Me</span></a></li>
-        <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i><span class="sr-only">Projects</span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section id="home" class="section">
-  <div class="content">
-    <h3>Hello! I'm</h3>
-    <h1>Kendrick Slamat</h1>
-    <div id="text-container" class="typing">
-  <p>I am a <span id="typing-text"></span><span id="typing-cursor"></span></p>
-  </div>
-    <h4>Hey, I'm Kendrick, a student diving into the world of programming. I've been busy creating fun and innovative projects. Oh, and did I mention I'm a huge fan of pufferfish?</h4>
-    <img src="assets/pufferfish.png" alt="pufferfish"></img>
-    <div class="icon-container">
-  <i class="fa-solid fa-angles-down"></i>
-    </div>
-  </div>
-</section>
+  <section id="about">
+    <h2>About</h2>
+    <p>Welcome to my personal website. Here you can find information about me, my blog, projects, and how to contact me.</p>
+  </section>
 
-<section id="about" class="section select">
-  <h1>About Me</h1>
-  <div class="about-content">
-    <p>I am a recent secondary school graduate passionate about mathematics, programming, and the transformative potential of artificial intelligence. With a strong foundation in problem-solving and a creative mindset, I hope to learn and discover new things, and experience the world around me.</p>
-    <img src="assets/pufferfish.png" alt="Profile Picture">
-</div>
-  </div>
-<div class="skills-list">
-  <button class="skill-btn" data-content="HTML is the standard language for creating web pages." role="button" aria-controls="skill-description">
-    <i class="fa-brands fa-html5"></i> HTML</button>
-  <button class="skill-btn" data-content="CSS is used to describe the presentation of a document written in HTML." role="button" aria-controls="skill-description">
-    <i class="fa-brands fa-css"></i> CSS</button>
-  <button class="skill-btn" data-content="Python is a high-level, interpreted programming language." role="button" aria-controls="skill-description">
-    <i class="fa-brands fa-python"></i> Python</button>
-  <button class="skill-btn" data-content="C++ is a general-purpose programming language." role="button" aria-controls="skill-description">
-    <i class="fas fa-cogs"></i> C++</button>
-  <button class="skill-btn" data-content="Git is a distributed version control system to keep track of code changes." role="button" aria-controls="skill-description">
-  <i class="fa-brands fa-git"></i> Git</button>
-</div>
-<div class="skill-description" id="skill-description" aria-live="polite"></div>
-</section>
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Read my latest blog posts here.</p>
+  </section>
 
-<section id="projects" class="section select">
-  <h1>My Projects</h1>
-  <div class="project-grid">
-    <div class="project">
-      <img src="assets/bibleguessr.png" alt="Project 1">
-      <h3><a href="https://github.com/pufferfish3e/BibleGuessr">BibleGuessr</a></h3>
-      <p>A simple interactive game on the web for users to guess bible verses based on small verse snippets, with closer guesses awarding more points.</p>
-      <p><b>Tech Stack:</b></p>
-      <p>python (Flask), HTML, CSS, js, esv.org (api).</p>
-    </div>
-    <div class="project">
-      <img src="assets/pptx-generator.png" alt="Project 2">
-      <h3><a href="https://github.com/JoelIrawanLim/pptx-generator">PPTX-generator</a></h3>
-      <p>A tool for generating presentations for bible study sessions, which simplifies repetitive tasks when we are tasked to create slides. Also uses google colab for a cli-based style.</p>
-      <p><b>Tech Stack:</b></p>
-      <p>python (Flask, python-pptx), HTML, CSS, js</p>
-    </div>
-    <!-- More Projects 
-    <div class="project">
-      <img src="project3.jpg" alt="Project 3">
-      <h3>Project Three</h3>
-      <p>Brief description of project three.</p>
-    </div>
-    -->
-  </div>
-<!--
-  <div class="cv-div">
-    <a href="/assets/gradcert.pdf" class="btn" download role="button" aria-label="Download CV"><i class="fas fa-download"></i>Download CV</a>
-  </div>
-  -->
-  
-</section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Check out some of my recent projects.</p>
+  </section>
 
-<footer id="footer">
-  <div class="download-buttons">
-  <a href="https://github.com/pufferfish3e" class="btn" role="button"><i class="fab fa-github"></i><span>pufferfish3e</span></a>
-  <a href="https://instagram.com/mambuwu" class="btn" role="button"><i class="fab fa-instagram"></i><span>mambuwu</span></a>  
-  <a class="btn"><i class="fa-solid fa-phone"></i><span>+65 8768 1400</span></a>  
-  <a class="btn"><i class="fa-regular fa-envelope"></i><span>kenslamat08@icloud.com</span></a>
-</div>
-  © 2025 Kendrick Slamat. All rights reserved.
-</footer>
-<script src="script.js"></script>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch with me through this section.</p>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
