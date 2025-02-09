@@ -365,7 +365,7 @@ section h2 {
 
 section .subheading {
     font-size: 1.2rem;
-    color: var(--apple-dark-gray);
+    color: var(--text-color);
     max-width: 600px;
     margin: 0 auto 3rem;
     font-weight: 400;
@@ -373,8 +373,8 @@ section .subheading {
 }
 #about {
     padding: 80px 20px;
-    background-color: var(--apple-black);
-    color: var(--apple-dark-gray);
+    background-color: var(--primary-color);
+    color: var(--text-color);
   }
   
   .about-grid {
@@ -434,7 +434,7 @@ section .subheading {
   }
   
   .social-icons a {
-    color: var(--primary-color);
+    color: var(--text-color);
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
@@ -466,17 +466,24 @@ section .subheading {
   gap: 40px;
   width: 100%;
   max-width: 1200px;
-  
   overflow-x: visible;
   
 }
 
 
 .about-grid > div {
-  background-color: #2a2a2e;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
   width: 100%;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow similar to project and blog cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -484,7 +491,7 @@ section .subheading {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 60%);
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -495,7 +502,7 @@ section .subheading {
 .about-grid p {
   font-size: 1.2rem;
   line-height: 1.5;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
