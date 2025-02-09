@@ -32,14 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
     const targetId = this.getAttribute('href').substring(1);
     const targetSection = document.getElementById(targetId);
+    
+    // Remove and re-add the 'visible' class to trigger the animation
     targetSection.classList.remove('visible');
-    void targetSection.offsetWidth;
-    setTimeout(() => {
-      targetSection.classList.add('visible');
-    }, 10);
+    void targetSection.offsetWidth; // Trigger reflow
+    targetSection.classList.add('visible');
+    // Scroll to the target section
+    targetSection.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
@@ -62,13 +65,31 @@ function updateSlider() {
 }
 
 nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % cardContainers.length;
-  updateSlider();
+  const currentCard = cardContainers[currentIndex];
+  currentCard.style.opacity = '0'; // Start fade-out
+  setTimeout(() => {
+    currentCard.classList.remove('active');
+    currentIndex = (currentIndex + 1) % cardContainers.length;
+    const nextCard = cardContainers[currentIndex];
+    nextCard.classList.add('active');
+    setTimeout(() => {
+      nextCard.style.opacity = '1'; 
+    }, 10); // Small delay to ensure class is added before fade-in
+  }, 500); // Delay to allow fade-out effect
 });
 
 prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + cardContainers.length) % cardContainers.length;
-  updateSlider();
+  const currentCard = cardContainers[currentIndex];
+  currentCard.style.opacity = '0'; // Start fade-out
+  setTimeout(() => {
+    currentCard.classList.remove('active');
+    currentIndex = (currentIndex - 1 + cardContainers.length) % cardContainers.length;
+    const prevCard = cardContainers[currentIndex];
+    prevCard.classList.add('active');
+    setTimeout(() => {
+      prevCard.style.opacity = '1'; // Start fade-in
+    }, 100); // Small delay to ensure class is added before fade-in
+  }, 200); // Delay to allow fade-out effect
 });
 
 window.addEventListener('resize', updateSlider);
