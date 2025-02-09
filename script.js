@@ -42,3 +42,36 @@ document.querySelectorAll('nav a').forEach(link => {
     }, 10);
   });
 });
+
+const slider = document.querySelector('.project-slider');
+const cardContainers = document.querySelectorAll('.project-card-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const container = document.querySelector('.project-slider-container');
+
+let currentIndex = 0; // ensure we start at project 1
+
+function updateSlider() {
+  cardContainers.forEach((containerEl, index) => {
+    if (index === currentIndex) {
+      containerEl.classList.add('active');
+    } else {
+      containerEl.classList.remove('active');
+    }
+  });
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % cardContainers.length;
+  updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + cardContainers.length) % cardContainers.length;
+  updateSlider();
+});
+
+window.addEventListener('resize', updateSlider);
+
+// Initialize slider position
+updateSlider();
