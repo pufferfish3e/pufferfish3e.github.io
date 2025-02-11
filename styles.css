@@ -52,7 +52,6 @@ button:hover {
     background-color: var(--text-color);
 }
 
-/* dark theme */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1d1d1f;
@@ -94,7 +93,7 @@ nav {
   width: 60%;
   max-width: 800px;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   backdrop-filter: blur(12px);
   background-color: rgba(15, 15, 15, 0.5);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -149,87 +148,72 @@ section {
     -webkit-text-fill-color: transparent;
 }
 
-#blog {
+#blog, #project {
     text-align: center;
     padding: 80px 20px;
     min-height: 120vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
-#blog h2 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 70%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
-    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-#blog > p {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-}
-
-.blog-container, .project-container {
+.card-container {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 40px 20px;
-    gap: 30px;
+    overflow-x: hidden;
     width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    padding: 20px;
+    position: relative;
 }
 
-.blog-container::-webkit-scrollbar, 
-.project-container::-webkit-scrollbar {
-    display: none;
-}
-
-.blog-card, .project-card {
-    flex: 0 0 350px; 
+.card {
+    flex: 0 0 400px;
+    position: relative; 
     scroll-snap-align: start;
-    margin-right: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    background: linear-gradient(180deg, transparent 0%, transparent 60%, var(--background-color) 100%);
+    border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    min-height: 60vh;
+    max-width: 30vw;
 }
 
-.blog-card:hover, .project-card:hover {
-    transform: translateY(-5px);
+.card:hover {
+    transform: scale(1.05);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.blog-card img {
-    padding: 20px;
+.card img {
+    position: absolute; 
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 20px;
+    z-index: -1; 
 }
 
-.blog-card h3 {
-    padding: 15px;
+.content {
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.card h3 {
+    padding-left: 15px;
+    text-align: left;
     margin: 0;
     font-size: 1.5rem;
     margin: 15px 0;
-    color: var(--primary-color);
+    color: var(--background-color);
     font-weight: 600;
 }
 
-.blog-card p {
+.card p {
+    text-align: left;
     padding: 0 15px 15px;
     color: var(--text-color);
     font-size: 1rem;
@@ -267,49 +251,6 @@ section {
     60% {
         transform: translateY(-5px);
     }
-}
-
-.mobile-nav {
-    display: none;
-}
-
-#projects {
-    position: relative;
-    padding: 80px 20px;
-    text-align: center;
-    min-height: 120vh;
-}
-
-.project-cards {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.project-card p {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-
-.project-nav,
-.nav-arrow {
-    display: none;
 }
 
 @media (max-width: 768px) {
@@ -422,7 +363,7 @@ section .subheading {
   .skills ul li {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var (--text-color);
   }
   
   
@@ -456,7 +397,7 @@ section .subheading {
   align-items: center;
   min-height: 120vh;
   padding: 20px;
-  padding-bottom: 25vh;
+  padding-bottom: 5vh;
 }
 
 
@@ -477,7 +418,7 @@ section .subheading {
   color: var(--text-color);
   width: 100%;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow similar to project and blog cards */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -512,11 +453,10 @@ section .subheading {
   }
 }
 
-/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out; /* Adjusted duration and easing */
+  transition: opacity 1s ease-out, transform 1s ease-out; 
 }
 
 .fade-in.visible {
@@ -533,95 +473,89 @@ section .subheading {
   transform: translateY(0);
 }
 
-.project-slider-container {
+nav .mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav .mobile-nav {
+    display: flex;
+  }
+
+  #blog, #project {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .card-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+
+  }
+
+  .scroll .m-scroll{
+    animation: none !important;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    min-width: 85vw;
+    margin-right: 20px;
+    scroll-snap-align: start;
+
+  }
+
+}
+
+.scroll {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: var(--primary-color); 
   overflow: hidden;
-}
-
-.project-slider {
-  display: flex;
-  transition: transform 0.5s ease;
-  gap: 20px;
-}
-
-.project-card-container {
-  display: none; 
-  width: 100%;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-.project-card-container.active {
-  opacity: 1;
-  pointer-events: auto;
-  display: flex;
-  transition: opacity 0.2s ease;
-}
-
-.project-card {
+  z-index: 1;
   margin: 0;
-  box-sizing: border-box;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  max-width: 90%;
-  width: 100%;
-  aspect-ratio: 9/16;
+  padding: 10px 0 10px 0;
+  mask-image: linear-gradient(90deg, transparent, var(--primary-color) 20%, var(--primary-color) 80%, transparent);
+}
+
+.scroll:hover .m-scroll {
+  animation-play-state: paused;
+}
+
+.m-scroll {
   overflow: hidden;
-  padding: 10px;
-  padding-top: 20px;
-  max-height: 120vw; 
-}
-
-.project-card img {
-  width: calc(90% - 20px); 
-  height: auto; 
-  object-fit: cover;
-  border-radius: 10px; 
-}
-
-.arrow-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 10;
+  height: 100%;
+  white-space: nowrap;
+  animation: scrollText 20s infinite linear;
+  margin: 0;
+  font-size: 0; 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease;
-  color: var(--accent-color);
-}
-.arrow-btn:hover {
-  background-color: var(--text-color);
-}
-.prev-btn {
-  left: 10px;
-}
-.next-btn {
-  right: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100vw;
 }
 
-@media (min-width: 769px) {
-  .prev-btn {
-    left: calc(50% - 25vw - 10px);
+.m-scroll .card {
+  display: inline-block;
+  margin-right: 20px;  
+  font-size: initial;  
+}
+
+
+@keyframes scrollText {
+  from {
+    transform: translateX(85vw);
   }
-  .next-btn {
-    right: calc(50% - 25vw - 10px);
+  to {
+    transform: translateX(-85vw);
   }
 }
-
-
-
-
