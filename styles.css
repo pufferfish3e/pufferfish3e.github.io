@@ -24,7 +24,6 @@ body::before {
     z-index: -1;
 }
 
-/* light theme */
 :root {
     --primary-color: #ffffff; 
     --text-color: #a1a1aa; 
@@ -156,71 +155,6 @@ section {
     margin-right: 15vw;
 }
 
-.card-container {
-    display: flex;
-    overflow-x: hidden;
-    width: 100%;
-    padding: 20px;
-    position: relative;
-}
-
-.card {
-    flex: 0 0 400px;
-    position: relative; 
-    scroll-snap-align: start;
-    background: linear-gradient(180deg, transparent 0%, transparent 60%, var(--background-color) 100%);
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-    min-height: 60vh;
-    max-width: 30vw;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    z-index: -1; 
-}
-
-.content {
-    color: var(--text-color);
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-}
-
-.card h3 {
-    padding-left: 15px;
-    text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: var(--background-color);
-    font-weight: 600;
-}
-
-.card p {
-    text-align: left;
-    padding: 0 15px 15px;
-    color: var(--text-color);
-    font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -251,6 +185,84 @@ section {
     60% {
         transform: translateY(-5px);
     }
+}
+
+.card h3, .card p, .card img{
+    color: var(--text-color);
+    z-index: 10;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 5px solid green;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border-radius: 14px;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 290px;
+  height: 390px;
+  z-index: 2;
+  background: var(--background-color);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease-in-out;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -486,76 +498,5 @@ nav .mobile-nav {
     margin-left: 0;
     margin-right: 0;
   }
-
-  .scroll-indicator {
-    display: none;
-  }
-
-  .card-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-
-  }
-
-  .scroll .m-scroll{
-    animation: none !important;
-  }
-
-  .card {
-    flex: 0 0 auto;
-    min-width: 85vw;
-    margin-right: 20px;
-    scroll-snap-align: start;
-
-  }
-
 }
 
-.scroll {
-  position: relative;
-  width: 100%;
-  background-color: var(--primary-color); 
-  overflow: hidden;
-  z-index: 1;
-  margin: 0;
-  padding: 10px 0 10px 0;
-  mask-image: linear-gradient(90deg, transparent, var(--primary-color) 20%, var(--primary-color) 80%, transparent);
-}
-
-.scroll:hover .m-scroll {
-  animation-play-state: paused;
-}
-
-.m-scroll {
-  overflow: hidden;
-  height: 100%;
-  white-space: nowrap;
-  animation: scrollText 20s infinite linear;
-  margin: 0;
-  font-size: 0; 
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  width: 100vw;
-}
-
-.m-scroll .card {
-  display: inline-block;
-  margin-right: 20px;  
-  font-size: initial;  
-}
-
-
-@keyframes scrollText {
-  from {
-    transform: translateX(85vw);
-  }
-  to {
-    transform: translateX(-85vw);
-  }
-}
